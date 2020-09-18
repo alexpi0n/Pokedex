@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  display: inline-flex;
+  width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .container {
+    display: block;
+  }
+}
+
+.main-title {
+  text-align: end;
+  color: red;
+  margin: 15px 10px 0 0;
+}
+
+.pokedex {
+  display: grid;
+  padding: 50px 30px 30px 30px;
+  background: lightyellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  animation: hideBlock 0.3s linear;
+  }
+
+@keyframes hideBlock {
+  100% {
+    margin-left: 0%;
+  }
+  0% {
+    margin-left: -570px;
+  }
+}
+
+.pokedex-hidden {
+  display: grid;
+  padding: 50px 30px 30px 30px;
+  background: lightyellow;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  animation: showBlock 0.3s linear;
+  margin-left: -570px;
+}
+
+@keyframes showBlock {
+  100% {
+    margin-left: -570px;
+  }
+  0% {
+    margin-left: 0%;
+  }
+}
+
+.pokemon-comparison {
+  width: 100%;
+  padding: 100px 30px 30px 30px;
+  background: floralwhite;;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.pokemon-header {
+  position: fixed;
+  background: whitesmoke;
+  width: 100%;
+  height: 70px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.pokemon-card {
+  display: inline-flex;
+  padding: 25px 0 25px 30px;
+  margin: auto;
+  margin-bottom: 15px;
+  background: whitesmoke;
+  text-transform: capitalize;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align-last: justify;
+}
+
+.pokemon-img {
+  width: 200px;
+  height: 270px;
+  margin: 0 30px 0 0;
+  background: #fff;
+}
+
+.pokemon-data {
+  padding: 0 30px 0 0;
+  width: 200px;
+}
+
+.comparison-title {
+  font-size: 48px;
+  text-align: center;
+  opacity: 0.1;
+}
+
+.comparison-btn {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+  background: coral;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 25px;
+  text-align-last: center;
+}
+
+.comparison-btn-remove {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+  background: coral;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 25px;
+  text-align-last: center;
+}
+
+.comparison-counter {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: coral;
+  border-radius: 15px;
+  position: absolute;
+  top: 24px;
+  right: 150px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.show-hide-btn {
+  height: 50px;
+  width: 20px;
+  background: red;
+  position: relative;
+  left: 565px;
+  top: 50px;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.show-hide-btn::after {
+  content: "<";
+  font-weight: 600;
+}
+
+.show-hide-btn:focus {
+  outline: none;
+}
+
+@media (max-width: 1180px) {
+  .show-hide-btn {
+    display: none;
+  }
+}
