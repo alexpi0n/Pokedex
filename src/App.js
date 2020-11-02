@@ -52,7 +52,7 @@ function App() {
     const comparisonBtnRemove = document.querySelectorAll(".comparison-btn-remove");
     const showHideBtn = document.getElementsByClassName("show-hide-btn")[0];
       
-    function toggleCardState(appendBlock, oppositeBtn, display) {
+    function toggleCardState(appendBlock, oppositeBtn) {
       
       Array.from(this).forEach((item, i, arr) => {
         this[i].addEventListener("click", () => {
@@ -62,9 +62,10 @@ function App() {
           this[i].classList.add("hidden");
 
           if (this === comparisonBtnAdd) {
-            this[i].parentElement.style.display = `inline-${display}`;
+            this[i].parentElement.style.display = "inline-block";
             comparisonArr.push(this[i].parentElement);
           } else {
+            this[i].parentElement.style.display = "inline-flex";
             comparisonArr.pop(this[i].parentElement);
           }
           comparisonCounter.innerHTML = comparisonArr.length;
@@ -72,8 +73,8 @@ function App() {
       });
     };
     
-    toggleCardState.apply(comparisonBtnAdd, [pokemonComparison, comparisonBtnRemove, "block"]);
-    toggleCardState.apply(comparisonBtnRemove, [pokemonsList, comparisonBtnAdd, "flex"]);
+    toggleCardState.apply(comparisonBtnAdd, [pokemonComparison, comparisonBtnRemove]);
+    toggleCardState.apply(comparisonBtnRemove, [pokemonsList, comparisonBtnAdd]);
 
     showHideBtn.addEventListener("click", () => {
       pokemonsList.classList.toggle("pokedex-hidden");       
